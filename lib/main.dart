@@ -12,13 +12,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
+          backgroundColor: const Color.fromRGBO(38, 36, 36, 1.0),
         appBar:_buildMainAppBar(),
         body: Column(
           children: <Widget>[
             Container(
               //margin: const EdgeInsets.symmetric(vertical: 15.0),
               margin: const EdgeInsets.only(top: 15.0),
-              color: Colors.black54,
+              //color: Colors.black54,
               height: 300.0,
               child: ListView(
                 // This next line does the trick.
@@ -53,8 +54,9 @@ class MyApp extends StatelessWidget {
               widthFactor: 1.0,
               //heightFactor: 1.0,
               child: Container(
-                color: Colors.cyan,
+                color: Color.fromRGBO(38, 36, 36, 0.5),
                 height: 456,
+                child:  _tabTiposLibros(context),
               ),
             ),
           ],
@@ -66,8 +68,26 @@ class MyApp extends StatelessWidget {
 
 AppBar _buildMainAppBar() {
   return AppBar(
-      leading: Icon(Icons.search),
-      backgroundColor: Colors.black45,
+      leading: const Icon(Icons.search),
+      backgroundColor: const Color.fromRGBO(38, 36, 36, 0.1),
       title: const Text('Search Play Books')
+  );
+}
+
+
+Widget _tabTiposLibros(BuildContext context) {
+  return  DefaultTabController(
+    length: 2, // length of tabs
+    child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: const <Widget>[
+      TabBar(
+        labelColor: Colors.lightBlue,
+        unselectedLabelColor: Colors.grey,
+        tabs: [
+          Tab(text: 'Ebooks'),
+          Tab(text: 'AudioBooks'),
+        ],
+      ),
+    ],
+    ),
   );
 }
