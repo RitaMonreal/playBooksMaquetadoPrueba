@@ -12,20 +12,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-          backgroundColor: const Color.fromRGBO(38, 36, 36, 1.0),
+          backgroundColor: Colors.pink,
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+
               const Padding(
-                padding: EdgeInsets.only(left: 8.0, top: 45.0,right: 8.0, bottom: 0.0 ),
-                
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Search Play Books',
+                  padding: EdgeInsets.only(left: 8.0, top: 45.0,right: 8.0, bottom: 0.0 ),
+
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      filled: true,
+                      fillColor: Colors.white,
+                      hintText: 'Search Play Books',
+                    ),
+
                   ),
                 ),
-              ),
               Container(
                 //margin: const EdgeInsets.symmetric(vertical: 15.0),
                 margin: const EdgeInsets.only(top: 15.0),
@@ -65,7 +69,7 @@ class MyApp extends StatelessWidget {
                   Container(
                     alignment: Alignment.topCenter,
                     color: Colors.greenAccent,
-                    height: 400,
+                    height: 300,
                     child:  _tabTiposLibros(context),
 
                   ),
