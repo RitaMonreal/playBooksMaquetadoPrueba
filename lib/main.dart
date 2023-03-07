@@ -13,10 +13,19 @@ class MyApp extends StatelessWidget {
       title: title,
       home: Scaffold(
           backgroundColor: const Color.fromRGBO(38, 36, 36, 1.0),
-        appBar:_buildMainAppBar(),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(left: 8.0, top: 45.0,right: 8.0, bottom: 0.0 ),
+                
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    hintText: 'Search Play Books',
+                  ),
+                ),
+              ),
               Container(
                 //margin: const EdgeInsets.symmetric(vertical: 15.0),
                 margin: const EdgeInsets.only(top: 15.0),
@@ -75,15 +84,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//
-
-AppBar _buildMainAppBar() {
-  return AppBar(
-      leading: const Icon(Icons.search),
-      backgroundColor: const Color.fromRGBO(38, 36, 36, 0.1),
-      title: const Text('Search Play Books')
-  );
-}
 
 Widget _tabMenuInferior(BuildContext context) {
   return  DefaultTabController(
