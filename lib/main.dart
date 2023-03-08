@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                   ),
+                  //Contenedor de la list view
                   Container(
                     //margin: const EdgeInsets.symmetric(vertical: 15.0),
                     margin: const EdgeInsets.only(top: 15.0),
@@ -42,10 +43,16 @@ class MyApp extends StatelessWidget {
                       // This next line does the trick.
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
+                        //Container de toda la información hereda el tamaño de altura que dí para toda la listView
                         Container(
-                          width: 170.0,
-                          margin: const EdgeInsets.all(3.0),
-                          color: Colors.red,
+                        width: 170.0,
+                        margin: const EdgeInsets.all(3.0),
+                        decoration: new BoxDecoration(
+                          image: new DecorationImage(
+                            image: ExactAssetImage('assets/littleLife.jpg'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
                         ),
                         Container(
                           width: 170.0,
@@ -66,6 +73,7 @@ class MyApp extends StatelessWidget {
                       ],
                     ),
                   ),
+                  //tabBar a mitad de pantalla
                   Container(
                     alignment: Alignment.topCenter,
                     color: Colors.greenAccent,
