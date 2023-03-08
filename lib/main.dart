@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                   //Contenedor de la list view
                   Container(
                     //margin: const EdgeInsets.symmetric(vertical: 15.0),
-                    margin: const EdgeInsets.only(top: 15.0),
+                    margin: const EdgeInsets.only(top: 11.0),
                     //color: Colors.black54,
                     height: 300.0,
                     child: ListView(
@@ -45,30 +45,80 @@ class MyApp extends StatelessWidget {
                       children: <Widget>[
                         //Container de toda la información hereda el tamaño de altura que dí para toda la listView
                         Container(
-                        width: 170.0,
-                        margin: const EdgeInsets.all(3.0),
-                        decoration: new BoxDecoration(
-                          image: new DecorationImage(
-                            image: ExactAssetImage('assets/littleLife.jpg'),
-                            fit: BoxFit.fill,
+                          width: 170.0,
+                          margin: const EdgeInsets.all(3.0),
+                          child: Column(
+                              children: <Widget>[
+                                Container(
+                                  height: 250.0,
+                                  decoration: new BoxDecoration(
+                                    image: new DecorationImage(
+                                      image: ExactAssetImage('assets/littleLife.jpg'),
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Text ('Little Life', textAlign: TextAlign.center),
+                                Text('100% complete', textAlign: TextAlign.center)
+                                ]
                           ),
                         ),
+                        Container(
+                          width: 170.0,
+                          margin: const EdgeInsets.all(3.0),
+                          child: Column(
+                              children: <Widget>[
+                                Container(
+                                  height: 250.0,
+                                  decoration: new BoxDecoration(
+                                    image: new DecorationImage(
+                                      image: ExactAssetImage('assets/janeEyre.jpg'),
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Text ('Jane Eyre', textAlign: TextAlign.center),
+                                Text('64% complete', textAlign: TextAlign.center)
+                              ]
+                          ),
                         ),
                         Container(
                           width: 170.0,
                           margin: const EdgeInsets.all(3.0),
-                          color: Colors.black38,
+                          child: Column(
+                              children: <Widget>[
+                                Container(
+                                  height: 250.0,
+                                  decoration: new BoxDecoration(
+                                    image: new DecorationImage(
+                                      image: ExactAssetImage('assets/cruelPrince.jpg'),
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Text ('The Cruel Prince', textAlign: TextAlign.center),
+                                Text('3% complete', textAlign: TextAlign.center)
+                              ]
+                          ),
                         ),
                         Container(
                           width: 170.0,
                           margin: const EdgeInsets.all(3.0),
-                          color: Colors.amberAccent,
-                        ),
-                        Container(
-                          width: 170.0,
-                          height: 270.0,
-                          margin: const EdgeInsets.all(3.0),
-                          color: Colors.greenAccent,
+                          child: Column(
+                              children: <Widget>[
+                                Container(
+                                  height: 250.0,
+                                  decoration: new BoxDecoration(
+                                    image: new DecorationImage(
+                                      image: ExactAssetImage('assets/tokioBlues.jpg'),
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Text ('Tokio blues', textAlign: TextAlign.center),
+                                Text('0% complete', textAlign: TextAlign.center)
+                              ]
+                          ),
                         ),
                       ],
                     ),
