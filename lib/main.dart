@@ -125,11 +125,20 @@ class MyApp extends StatelessWidget {
                   ),
                   //tabBar a mitad de pantalla
                   Container(
+
                     alignment: Alignment.topCenter,
                     color: Colors.greenAccent,
                     height: 368,
-                    child:  _tabTiposLibros(context),
 
+                    child: Column(
+                      children: <Widget>[
+                        _tabTiposLibros(context),
+                        Container(
+                          height: 700.0,
+                          color: Colors.blue,
+                        )
+                      ],
+                    )
                   ),
                 ],
               ),
