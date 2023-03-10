@@ -20,116 +20,8 @@ class MyApp extends StatelessWidget {
                   children: <Widget>[
                     _searchBox(context),
                     //Contenedor de la list view
-                    Container(
-                      margin: const EdgeInsets.only(top: 13.0, left: 15.0, right: 15.0),
-                      height: 310.0,
-                      child: ListView(
-// This next line does the trick.
-                        scrollDirection: Axis.horizontal,
-                        children: <Widget>[
-//Container de toda la información hereda el tamaño de altura que dí para toda la listView
-                          Container(
-                            width: 170.0,
-                            margin: const EdgeInsets.all(4.0),
-                            child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    height: 250.0,
-                                    decoration: const BoxDecoration(
-                                      image:  DecorationImage(
-                                        image: ExactAssetImage('assets/littleLife.jpg'),
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ),
-                                  ),
-                                  const Text ('Little Life',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 15,
-                                          color: Colors.white)),
-                                  const Text('100% complete',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.grey)),
-                                ]
-                            ),
-                          ),
-
-                          Container(
-                            width: 170.0,
-                            margin: const EdgeInsets.all(4.0),
-                            child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    height: 250.0,
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                        image: ExactAssetImage('assets/janeEyre.jpg'),
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ),
-                                  ),
-                                  const Text ('Jane Eyre',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 15,
-                                          color: Colors.white)
-                                  ),
-                                  const Text('64% complete',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.grey)),
-                                ]
-                            ),
-                          ),
-                          Container(
-                            width: 170.0,
-                            margin: const EdgeInsets.all(4.0),
-                            child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    height: 250.0,
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                        image: ExactAssetImage('assets/cruelPrince.jpg'),
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ),
-                                  ),
-                                  const Text ('The Cruel Prince',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 15,
-                                      color: Colors.white)),
-                                  const Text('3% complete',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.grey)),
-                                ]
-                            ),
-                          ),
-                          Container(
-                            width: 170.0,
-                            margin: const EdgeInsets.all(4.0),
-                            child: Column(
-                                children: <Widget>[
-                                  Container(
-                                    height: 250.0,
-                                    decoration: const BoxDecoration(
-                                      image: DecorationImage(
-                                        image: ExactAssetImage('assets/tokioBlues.jpg'),
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ),
-                                  ),
-                                  const Text ('Tokio blues',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(fontSize: 15,
-                                          color: Colors.white)),
-                                  const Text('0% complete',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(color: Colors.grey))
-                                ]
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-//tabBar a mitad de pantalla
+                    _listViewLibrosH(context),
+                    //tabBar a mitad de pantalla
                     DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.grey.shade800,
@@ -189,6 +81,118 @@ Widget _searchBox(BuildContext context){
         contentPadding: EdgeInsets.symmetric(vertical: 12),
         hintText: 'Search Play Books',
       ),
+    ),
+  );
+}
+
+Widget _listViewLibrosH(BuildContext context){
+  return Container(
+    margin: const EdgeInsets.only(top: 13.0, left: 15.0, right: 15.0),
+    height: 310.0,
+    child: ListView(
+// This next line does the trick.
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+//Container de toda la información hereda el tamaño de altura que dí para toda la listView
+        Container(
+          width: 170.0,
+          margin: const EdgeInsets.all(4.0),
+          child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250.0,
+                  decoration: const BoxDecoration(
+                    image:  DecorationImage(
+                      image: ExactAssetImage('assets/littleLife.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Text ('Little Life',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 15,
+                        color: Colors.white)),
+                const Text('100% complete',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey)),
+              ]
+          ),
+        ),
+
+        Container(
+          width: 170.0,
+          margin: const EdgeInsets.all(4.0),
+          child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250.0,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/janeEyre.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Text ('Jane Eyre',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 15,
+                        color: Colors.white)
+                ),
+                const Text('64% complete',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey)),
+              ]
+          ),
+        ),
+        Container(
+          width: 170.0,
+          margin: const EdgeInsets.all(4.0),
+          child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250.0,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/cruelPrince.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Text ('The Cruel Prince',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 15,
+                        color: Colors.white)),
+                const Text('3% complete',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey)),
+              ]
+          ),
+        ),
+        Container(
+          width: 170.0,
+          margin: const EdgeInsets.all(4.0),
+          child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250.0,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/tokioBlues.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Text ('Tokio blues',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 15,
+                        color: Colors.white)),
+                const Text('0% complete',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey))
+              ]
+          ),
+        ),
+      ],
     ),
   );
 }
