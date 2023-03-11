@@ -15,30 +15,30 @@ class MyApp extends StatelessWidget {
 //Se aplica solo a la parte móvil de la pantalla
             Expanded(
               child:  SingleChildScrollView(
-//Columna que abarca toda la pantalla menos el menú inferior
                 child: Column(
                   children: <Widget>[
                     _searchBox(context),
-                    //Contenedor de la list view
                     _listViewLibrosH(context),
-                    //tabBar a mitad de pantalla
-                    DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.grey.shade800,
-                        border: const Border(bottom: BorderSide(color: Colors.grey, width: 0.5)),
+                    Column(
+                      children: <Widget>[
+                      DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: Colors.grey.shade800,
+                          border: const Border(bottom: BorderSide(color: Colors.grey, width: 0.5)),
+                        ),
+                        child:  _tabTiposLibros(context),
                       ),
-                      child:  _tabTiposLibros(context),
-                    ),
+                        Container(
+                          color: Colors.green,
+                          height: 500.0,
+                        )
+                      ]
+                    )
                   ],
                 ),
               ),
             ),
-            Container(
-//alignment: Alignment.topCenter,
-              color: Colors.grey.shade800,
-              height: 74.0,
-              child:  _tabMenuInferior(context),
-            ),
+            _mitadPantallaTabBarCategorias(context),
           ],
         ),
       ),
@@ -46,26 +46,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-Widget _tabMenuInferior(BuildContext context) {
-  return  DefaultTabController(
-    length: 4, // length of tabs
-    child: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: const <Widget>[
-        TabBar(
-          indicatorColor: Colors.transparent,
-
-          labelColor: Colors.lightBlue,
-          unselectedLabelColor: Colors.grey,
-          tabs: [
-            Tab(text: 'Home', icon: Icon(Icons.home_outlined)),
-            Tab(text: 'Library', icon: Icon(Icons.library_books_outlined)),
-            Tab(text: 'Wishlist', icon: Icon(Icons.bookmark_border_outlined)),
-            Tab(text: 'Shop', icon:Icon(Icons.store_outlined)),
-          ],
-        ),
-      ],
-    ),
+Widget _mitadPantallaTabBarCategorias(BuildContext context)
+{
+  return Container(
+      color: Colors.grey.shade800,
+      height: 74.0,
+      child:  _tabMenuInferior(context)
   );
 }
 
@@ -196,6 +182,30 @@ Widget _listViewLibrosH(BuildContext context){
     ),
   );
 }
+
+
+Widget _tabMenuInferior(BuildContext context) {
+  return  DefaultTabController(
+    length: 4, // length of tabs
+    child: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: const <Widget>[
+        TabBar(
+          indicatorColor: Colors.transparent,
+
+          labelColor: Colors.lightBlue,
+          unselectedLabelColor: Colors.grey,
+          tabs: [
+            Tab(text: 'Home', icon: Icon(Icons.home_outlined)),
+            Tab(text: 'Library', icon: Icon(Icons.library_books_outlined)),
+            Tab(text: 'Wishlist', icon: Icon(Icons.bookmark_border_outlined)),
+            Tab(text: 'Shop', icon:Icon(Icons.store_outlined)),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+
 
 Widget _tabTiposLibros(BuildContext context) {
   return DefaultTabController(
