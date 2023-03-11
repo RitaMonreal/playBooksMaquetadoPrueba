@@ -65,6 +65,10 @@ flutter:
     - assets/cruelPrince.jpg
     - assets/janeEyre.jpg
     - assets/tokioBlues.jpg
+    - assets/bannerDescuento.jpg
+    - assets/genres.jpg
+    - assets/newReleases.jpg
+    - assets/topSelling.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

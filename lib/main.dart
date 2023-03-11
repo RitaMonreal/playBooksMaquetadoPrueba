@@ -28,9 +28,73 @@ class MyApp extends StatelessWidget {
                         ),
                         child:  _tabTiposLibros(context),
                       ),
+                        //Contenedor para la simulación de tabs
                         Container(
-                          color: Colors.green,
                           height: 500.0,
+                          child: Column(
+                            children: <Widget>[
+                              Container(
+                               margin: EdgeInsets.only(top: 35.0),
+                                width: 360.0,
+                                height: 160.0,
+                                decoration: const BoxDecoration(
+                                  image:  DecorationImage(
+                                    image: ExactAssetImage('assets/bannerDescuento.jpg'),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 20.0, left: 20),
+                              child:  Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text('Explore Play Books',
+                                    style: TextStyle(fontSize: 18,
+                                        color: Colors.white)
+                                ),
+                              ),
+                ),
+                              Container(
+                                  margin: const EdgeInsets.only(top: 13.0, left: 15.0, right: 15.0),
+                                  height: 100.0,
+                                  child: ListView(
+                                    scrollDirection: Axis.horizontal,
+                                    children: <Widget>[
+                                      Container(
+                                        width: 150.0,
+                                        margin: const EdgeInsets.all(6.0),
+                                        decoration: const BoxDecoration(
+                                          image:  DecorationImage(
+                                            image: ExactAssetImage('assets/genres.jpg'),
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        width: 180.0,
+                                        margin: const EdgeInsets.all(6.0),
+                                        decoration: const BoxDecoration(
+                                          image:  DecorationImage(
+                                            image: ExactAssetImage('assets/topSelling.jpg'),
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        width: 200.0,
+                                        margin: const EdgeInsets.all(6.0),
+                                        decoration: const BoxDecoration(
+                                          image:  DecorationImage(
+                                            image: ExactAssetImage('assets/newReleases.jpg'),
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ),
+                                      ],
+                                  ),
+                              ),
+                            ],
+                          )
                         )
                       ]
                     )
@@ -44,6 +108,129 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _listViewLibrosH(BuildContext context){
+  return Container(
+    margin: const EdgeInsets.only(top: 13.0, left: 15.0, right: 15.0),
+    height: 310.0,
+    child: ListView(
+// This next line does the trick.
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+//Container de toda la información hereda el tamaño de altura que dí para toda la listView
+        Container(
+          width: 170.0,
+          margin: const EdgeInsets.all(4.0),
+          child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250.0,
+                  decoration: const BoxDecoration(
+                    image:  DecorationImage(
+                      image: ExactAssetImage('assets/littleLife.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0),
+                  child: Text ('Tan Poca Vida',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 15,
+                          color: Colors.white)),
+                ),
+          const Text('100% complete',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey)),
+              ]
+          ),
+        ),
+
+        Container(
+          width: 170.0,
+          margin: const EdgeInsets.all(4.0),
+          child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250.0,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/janeEyre.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0),
+                  child: Text ('Jane Eyre',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 15,
+                          color: Colors.white)),
+                ),
+                const Text('64% complete',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey)),
+              ]
+          ),
+        ),
+        Container(
+          width: 170.0,
+          margin: const EdgeInsets.all(4.0),
+          child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250.0,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/cruelPrince.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0),
+                  child: Text ('The Cruel Prince',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 15,
+                          color: Colors.white)),
+                ),
+                const Text('3% complete',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey)),
+              ]
+          ),
+        ),
+        Container(
+          width: 170.0,
+          margin: const EdgeInsets.all(4.0),
+          child: Column(
+              children: <Widget>[
+                Container(
+                  height: 250.0,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/tokioBlues.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0),
+                  child: Text ('Tokio blues',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 15,
+                          color: Colors.white)),
+                ),
+                const Text('0% complete',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey))
+              ]
+          ),
+        ),
+      ],
+    ),
+  );
 }
 
 Widget _mitadPantallaTabBarCategorias(BuildContext context)
@@ -70,130 +257,6 @@ Widget _searchBox(BuildContext context){
     ),
   );
 }
-
-Widget _listViewLibrosH(BuildContext context){
-  return Container(
-    margin: const EdgeInsets.only(top: 13.0, left: 15.0, right: 15.0),
-    height: 310.0,
-    child: ListView(
-// This next line does the trick.
-      scrollDirection: Axis.horizontal,
-      children: <Widget>[
-//Container de toda la información hereda el tamaño de altura que dí para toda la listView
-        Container(
-          width: 170.0,
-          margin: const EdgeInsets.all(4.0),
-          child: Column(
-              children: <Widget>[
-                Container(
-                  height: 250.0,
-                  decoration: const BoxDecoration(
-                    image:  DecorationImage(
-                      image: ExactAssetImage('assets/littleLife.jpg'),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-          const Padding(
-              padding: EdgeInsets.only(top: 5.0),
-               child: Text ('Tan Poca Vida',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15,
-                        color: Colors.white)),
-          ),
-                const Text('100% complete',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey)),
-              ]
-          ),
-        ),
-
-        Container(
-          width: 170.0,
-          margin: const EdgeInsets.all(4.0),
-          child: Column(
-              children: <Widget>[
-                Container(
-                  height: 250.0,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: ExactAssetImage('assets/janeEyre.jpg'),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-          const Padding(
-              padding: EdgeInsets.only(top: 5.0),
-                child: Text ('Jane Eyre',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15,
-                        color: Colors.white)),
-          ),
-                const Text('64% complete',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey)),
-              ]
-          ),
-        ),
-        Container(
-          width: 170.0,
-          margin: const EdgeInsets.all(4.0),
-          child: Column(
-              children: <Widget>[
-                Container(
-                  height: 250.0,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: ExactAssetImage('assets/cruelPrince.jpg'),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-          const Padding(
-              padding: EdgeInsets.only(top: 5.0),
-                child: Text ('The Cruel Prince',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15,
-                        color: Colors.white)),
-          ),
-                const Text('3% complete',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey)),
-              ]
-          ),
-        ),
-        Container(
-          width: 170.0,
-          margin: const EdgeInsets.all(4.0),
-          child: Column(
-              children: <Widget>[
-                Container(
-                  height: 250.0,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: ExactAssetImage('assets/tokioBlues.jpg'),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 5.0),
-                    child: Text ('Tokio blues',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 15,
-                            color: Colors.white)),
-                ),
-                const Text('0% complete',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey))
-              ]
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
 
 Widget _tabMenuInferior(BuildContext context) {
   return  DefaultTabController(
