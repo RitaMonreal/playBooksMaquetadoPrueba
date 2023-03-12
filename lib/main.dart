@@ -20,84 +20,152 @@ class MyApp extends StatelessWidget {
                     _searchBox(context),
                     _listViewLibrosH(context),
                     Column(
-                      children: <Widget>[
-                      DecoratedBox(
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade800,
-                          border: const Border(bottom: BorderSide(color: Colors.grey, width: 0.5)),
-                        ),
-                        child:  _tabTiposLibros(context),
-                      ),
-                        //Contenedor para la simulación de tabs
-                        Container(
-                          height: 500.0,
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                               margin: EdgeInsets.only(top: 35.0),
-                                width: 360.0,
-                                height: 160.0,
-                                decoration: const BoxDecoration(
-                                  image:  DecorationImage(
-                                    image: ExactAssetImage('assets/bannerDescuento.jpg'),
-                                    fit: BoxFit.fill,
+                        children: <Widget>[
+                          DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade800,
+                              border: const Border(bottom: BorderSide(color: Colors.grey, width: 0.5)),
+                            ),
+                            child:  _tabTiposLibros(context),
+                          ),
+                          //Contenedor para la simulación de tabs
+                          _tabTemporalExplore(context),
+                          //Text('Hola'),
+                          //List view horizontal de libros que vende la app
+                          const Padding(
+                            padding: EdgeInsets.only(top: 10.0, left: 25),
+                            child:  Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('From enemies to lovers',
+                                  style: TextStyle(fontSize: 18,
+                                      color: Colors.white)
+                              ),
+                            ),
+                          ),
+                          Container(
+                            //margin: const EdgeInsets.symmetric(vertical: 15.0),
+                            //margin: const EdgeInsets.only(top: 15.0),
+                            margin: const EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
+                            //color: Colors.black54,
+                            height: 330.0,
+                            child: ListView(
+                              // This next line does the trick.
+                              scrollDirection: Axis.horizontal,
+                              children: <Widget>[
+                                Container(
+                                  width: 170.0,
+                                  margin: const EdgeInsets.all(4.0),
+                                  child: Column(
+                                      children: <Widget>[
+                                        Container(
+                                          height: 250.0,
+                                          decoration: const BoxDecoration(
+                                            image:  DecorationImage(
+                                              image: ExactAssetImage('assets/prideAndPrejudice.jpg'),
+                                              fit: BoxFit.fill,
+                                            ),
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 5.0),
+                                          child: Text ('Orgullo y prejuicio',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(fontSize: 15,
+                                                  color: Colors.white)),
+                                        ),
+                                        const Text('100% complete',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(color: Colors.grey)),
+                                      ]
                                   ),
                                 ),
-                              ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20.0, left: 20),
-                              child:  Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text('Explore Play Books',
-                                    style: TextStyle(fontSize: 18,
-                                        color: Colors.white)
-                                ),
-                              ),
-                ),
-                              Container(
-                                  margin: const EdgeInsets.only(top: 13.0, left: 15.0, right: 15.0),
-                                  height: 100.0,
-                                  child: ListView(
-                                    scrollDirection: Axis.horizontal,
-                                    children: <Widget>[
-                                      Container(
-                                        width: 150.0,
-                                        margin: const EdgeInsets.all(6.0),
-                                        decoration: const BoxDecoration(
-                                          image:  DecorationImage(
-                                            image: ExactAssetImage('assets/genres.jpg'),
-                                            fit: BoxFit.fill,
+
+                                Container(
+                                  width: 170.0,
+                                  margin: const EdgeInsets.all(4.0),
+                                  child: Column(
+                                      children: <Widget>[
+                                        Container(
+                                          height: 250.0,
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                              image: ExactAssetImage('assets/elPsicoanalista.jpg'),
+                                              fit: BoxFit.fill,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Container(
-                                        width: 180.0,
-                                        margin: const EdgeInsets.all(6.0),
-                                        decoration: const BoxDecoration(
-                                          image:  DecorationImage(
-                                            image: ExactAssetImage('assets/topSelling.jpg'),
-                                            fit: BoxFit.fill,
-                                          ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 5.0),
+                                          child: Text ('El Psicoanalista',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(fontSize: 15,
+                                                  color: Colors.white)),
                                         ),
-                                      ),
-                                      Container(
-                                        width: 200.0,
-                                        margin: const EdgeInsets.all(6.0),
-                                        decoration: const BoxDecoration(
-                                          image:  DecorationImage(
-                                            image: ExactAssetImage('assets/newReleases.jpg'),
-                                            fit: BoxFit.fill,
-                                          ),
-                                        ),
-                                      ),
-                                      ],
+                                        const Text('64% complete',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(color: Colors.grey)),
+                                      ]
                                   ),
-                              ),
-                            ],
-                          )
-                        )
-                      ]
-                    )
+                                ),
+                                Container(
+                                  width: 170.0,
+                                  margin: const EdgeInsets.all(4.0),
+                                  child: Column(
+                                      children: <Widget>[
+                                        Container(
+                                          height: 250.0,
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                              image: ExactAssetImage('assets/cancionesPaula.jpg'),
+                                              fit: BoxFit.fill,
+                                            ),
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 5.0),
+                                          child: Text ('Canciones para Paula',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(fontSize: 15,
+                                                  color: Colors.white)),
+                                        ),
+                                        const Text('3% complete',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(color: Colors.grey)),
+                                      ]
+                                  ),
+                                ),
+                                Container(
+                                  width: 170.0,
+                                  margin: const EdgeInsets.all(4.0),
+                                  child: Column(
+                                      children: <Widget>[
+                                        Container(
+                                          height: 250.0,
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                              image: ExactAssetImage('assets/rbaBook-.jpg'),
+                                              fit: BoxFit.fill,
+                                            ),
+                                          ),
+                                        ),
+                                        const Padding(
+                                          padding: EdgeInsets.only(top: 5.0),
+                                          child: Text ('Rojo, blanco y sangre azul',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(fontSize: 15,
+                                                  color: Colors.white)),
+                                        ),
+                                        const Text('0% complete',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(color: Colors.grey))
+                                      ]
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                    ),
                   ],
                 ),
               ),
@@ -108,6 +176,76 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _tabTemporalExplore(BuildContext context){
+  return SizedBox(
+      height: 360.0,
+      child: Column(
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(top: 35.0),
+            width: 370.0,
+            height: 160.0,
+            decoration: const BoxDecoration(
+              image:  DecorationImage(
+                image: ExactAssetImage('assets/bannerDescuento.jpg'),
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 20.0, left: 25),
+            child:  Align(
+              alignment: Alignment.centerLeft,
+              child: Text('Explore Play Books',
+                  style: TextStyle(fontSize: 18,
+                      color: Colors.white)
+              ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 13.0, left: 15.0, right: 15.0),
+            height: 100.0,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                Container(
+                  width: 150.0,
+                  margin: const EdgeInsets.all(6.0),
+                  decoration: const BoxDecoration(
+                    image:  DecorationImage(
+                      image: ExactAssetImage('assets/genres.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 180.0,
+                  margin: const EdgeInsets.all(6.0),
+                  decoration: const BoxDecoration(
+                    image:  DecorationImage(
+                      image: ExactAssetImage('assets/topSelling.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 200.0,
+                  margin: const EdgeInsets.all(6.0),
+                  decoration: const BoxDecoration(
+                    image:  DecorationImage(
+                      image: ExactAssetImage('assets/newReleases.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      )
+  );
 }
 
 Widget _listViewLibrosH(BuildContext context){
@@ -140,7 +278,7 @@ Widget _listViewLibrosH(BuildContext context){
                       style: TextStyle(fontSize: 15,
                           color: Colors.white)),
                 ),
-          const Text('100% complete',
+                const Text('100% complete',
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.grey)),
               ]
@@ -301,4 +439,3 @@ Widget _tabTiposLibros(BuildContext context) {
     ),
   );
 }
-
