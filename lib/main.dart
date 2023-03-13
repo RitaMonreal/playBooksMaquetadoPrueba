@@ -66,14 +66,8 @@ class MyApp extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        const Padding(
-                                          padding: EdgeInsets.only(top: 5.0),
-                                          child: Text ('Orgullo y prejuicio',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(fontSize: 15,
-                                                  color: Colors.white)),
-                                        ),
-                                        const Text('100% complete',
+                                        const Text('Pride and Predujice'
+                                            'Jane Austen',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(color: Colors.grey)),
                                       ]
@@ -94,14 +88,8 @@ class MyApp extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        const Padding(
-                                          padding: EdgeInsets.only(top: 5.0),
-                                          child: Text ('El Psicoanalista',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(fontSize: 15,
-                                                  color: Colors.white)),
-                                        ),
-                                        const Text('64% complete',
+                                        const Text('El psicoanálista'
+                                            'John Katzenbach',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(color: Colors.grey)),
                                       ]
@@ -121,14 +109,8 @@ class MyApp extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        const Padding(
-                                          padding: EdgeInsets.only(top: 5.0),
-                                          child: Text ('Canciones para Paula',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(fontSize: 15,
-                                                  color: Colors.white)),
-                                        ),
-                                        const Text('3% complete',
+                                        const Text('Canciones para Paula'
+                                            'Blue Jeans',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(color: Colors.grey)),
                                       ]
@@ -143,19 +125,13 @@ class MyApp extends StatelessWidget {
                                           height: 250.0,
                                           decoration: const BoxDecoration(
                                             image: DecorationImage(
-                                              image: ExactAssetImage('assets/rbaBook-.jpg'),
+                                              image: ExactAssetImage('assets/redWhiteBlue.jpg'),
                                               fit: BoxFit.fill,
                                             ),
                                           ),
                                         ),
-                                        const Padding(
-                                          padding: EdgeInsets.only(top: 5.0),
-                                          child: Text ('Rojo, blanco y sangre azul',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(fontSize: 15,
-                                                  color: Colors.white)),
-                                        ),
-                                        const Text('0% complete',
+                                        const Text('Rojo, blanco y sangre azul'
+                                            'Casey McQuiston',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(color: Colors.grey))
                                       ]
@@ -382,7 +358,7 @@ Widget _mitadPantallaTabBarCategorias(BuildContext context)
 
 Widget _searchBox(BuildContext context){
   return const Padding(
-    padding: EdgeInsets.only(left: 8.0, top: 45.0,right: 8.0, bottom: 0.0 ),
+    padding: EdgeInsets.only(left: 11.0, top: 45.0,right: 11.0, bottom: 0.0 ),
     child: TextField(
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.search),
